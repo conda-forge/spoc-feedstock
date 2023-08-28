@@ -1,11 +1,11 @@
-About spoc
-==========
+About spoc-feedstock
+====================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/spoc-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/hlop3z/spoc
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/spoc-feedstock/blob/main/LICENSE.txt)
 
 Summary: Elastic framework builder
 
