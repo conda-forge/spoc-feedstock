@@ -13,26 +13,25 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  entry_points:
+    - spoc-init=spoc:start_project
 
 requirements:
   host:
     - pip
     - pdm-pep517 >=1.0.0
-    - python >=3.10
+    - python >=3.12
   run:
-    - python >=3.10
-    - toml >=0.10.2
+    - python >=3.12
 
 test:
-  source_files:
-    - tests
+  import:
+    - spoc
   commands:
     - pip check
-    - cd tests
-    - python main.py
+    - spoc-init -h
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/hlop3z/spoc
