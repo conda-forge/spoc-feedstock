@@ -1,5 +1,5 @@
 {% set name = "spoc" %}
-{% set version = "0.1.15" %}
+{% set version = "0.1.21" %}
 
 package:
   name: {{ name|lower }}
@@ -7,32 +7,31 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/spoc-{{ version }}.tar.gz
-  sha256: 04cb33b3bb05c53bbd494180e5fdc92f1575d17423fe5a18c005865cd4d764c2
+  sha256: d79bbea08f284ad0dc6a90c0ce0a6e337a29c2a782b2be9d7d0d07fa8d4a414c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  entry_points:
+    - spoc-init=spoc:start_project
 
 requirements:
   host:
     - pip
     - pdm-pep517 >=1.0.0
-    - python >=3.10
+    - python >=3.12
   run:
-    - python >=3.10
-    - toml >=0.10.2
+    - python >=3.12
 
 test:
-  source_files:
-    - tests
+  imports:
+    - spoc
   commands:
     - pip check
-    - cd tests
-    - python main.py
+    - spoc-init -h
   requires:
     - pip
-    - pytest
 
 about:
   home: https://github.com/hlop3z/spoc
