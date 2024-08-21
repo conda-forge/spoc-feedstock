@@ -1,5 +1,5 @@
 {% set name = "spoc" %}
-{% set version = "0.1.32" %}
+{% set version = "0.1.33" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/spoc-{{ version }}.tar.gz
-  sha256: 6768ea43230adbdc5e8026416adae36dd079ba38e50c43cf7a75adbf797dd60e
+  sha256: b70e489545d866367898571f985445a255a33e2f2976ea491bd645849171b58f
 
 build:
   noarch: python
