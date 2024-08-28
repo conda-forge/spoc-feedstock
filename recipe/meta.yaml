@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - pdm-pep517 >=1.0.0
+    - pdm-backend
     - python >=3.12
   run:
     - python >=3.12
