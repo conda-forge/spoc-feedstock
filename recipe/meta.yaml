@@ -14,8 +14,6 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  entry_points:
-    - spoc-init=spoc:start_project
 
 requirements:
   host:
@@ -30,7 +28,6 @@ test:
     - spoc
   commands:
     - pip check
-    - spoc-init -h
   requires:
     - pip
     - python {{ python_min }}
