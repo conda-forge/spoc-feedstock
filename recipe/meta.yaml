@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - pip
-    - pdm-backend
+    - hatchling
     - python {{ python_min }}
   run:
     - python >={{ python_min }}
