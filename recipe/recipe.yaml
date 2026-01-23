@@ -1,0 +1,45 @@
+schema_version: 1
+
+context:
+  python_min: 3.13
+  name: spoc
+  version: 0.3.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/spoc-${{ version }}.tar.gz
+  sha256: 636c15cdd7b2fde2286069ee1bac6d38220049994c4f6c0696c550b3e628849e
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - hatchling
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - spoc
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Elastic framework builder
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/hlop3z/spoc
+  documentation: https://hlop3z.github.io/spoc/
+
+extra:
+  recipe-maintainers:
+    - thewchan
