@@ -3,7 +3,7 @@ schema_version: 1
 context:
   python_min: "3.13"
   name: spoc
-  version: "0.5.0"
+  version: "0.6.0"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/spoc-${{ version }}.tar.gz
-  sha256: ef702ba6cee2f63501b088cad5aff198df2cf7bfa2f654feae6d4028268b7d93
+  sha256: baf47d207ba0191dc5d5fe594f516d3be6bcf138e3266c960de815c1c5fb603f
 
 build:
   number: 0
